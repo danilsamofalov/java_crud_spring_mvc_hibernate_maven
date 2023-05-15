@@ -18,11 +18,6 @@ import web.service.UserService;
 @RequestMapping("/users")
 public class UserController {
 
-
-    public UserController() {
-    }
-
-    @Autowired
     private UserService userService;
 
     public void setUserService(UserService userService) {

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Найденный пользователь</title>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Департамент</th>
+            <th>Зарплата</th>
+
+        </tr>
+        <tr>
+            <td th:text="${user.getId()}">Id</td>
+            <td th:text="${user.getName()}">Имя</td>
+            <td th:text="${user.getSurname()}">Фамилия</td>
+            <td th:text="${user.getDepartment()}">Департамент</td>
+            <td th:text="${user.getSalary()}">Зарплата</td>
+        </tr>
+    </table>
+    <br/>
+</div>
+
+<a th:href="@{/users/{id}/edit(id=${user.getId()})}">Edit</a>
+
+
+<form th:method="DELETE" th:action="@{/users/{id}(id=${user.getId()})}">
+    <input type="submit" value="DELETE!"/>
+</form>
+<br/>
+<hr/>
+
+<a href="/users">К пользователям</a>
+</body>
+</html>
